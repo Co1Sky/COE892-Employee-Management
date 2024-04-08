@@ -57,7 +57,7 @@ const RegisterEmployee: React.FC = () => {
     };
   
     try {
-      const response = await fetch("http://localhost:8000/register/employee", { // Adjusted URL to match your FastAPI endpoint
+      const response = await fetch("https://api.colinpage.org/register/employee", { // Adjusted URL to match your FastAPI endpoint
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -13,7 +13,7 @@ const LoginEmployee: React.FC = () => {
       e.preventDefault(); // Prevent default form submission behavior
       try {
           const userData = { username: username.toLowerCase(), password };
-          const response = await fetch("http://localhost:8000/login/employee", { // Adjusted to match your API endpoint
+          const response = await fetch("https://api.colinpage.org/login/employee", { // Adjusted to match your API endpoint
             method: "POST",
             headers: {
               "Content-Type": "application/json",

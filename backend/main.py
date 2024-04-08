@@ -13,7 +13,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 app = FastAPI()
 
-origins = ["http://localhost:5173"]
+origins = ["*"]
 
 # Add CORS middleware
 app.add_middleware(
@@ -257,4 +257,4 @@ def get_schedule_employee(username: str, db: Session = Depends(get_db)):
 # Run the application
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8005)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

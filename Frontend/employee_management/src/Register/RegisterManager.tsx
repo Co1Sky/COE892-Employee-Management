@@ -57,7 +57,7 @@ const RegisterManager: React.FC = () => {
     };
 
     try {
-        const response = await fetch("http://localhost:8000/register/manager", {
+        const response = await fetch("https://api.colinpage.org/register/manager", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

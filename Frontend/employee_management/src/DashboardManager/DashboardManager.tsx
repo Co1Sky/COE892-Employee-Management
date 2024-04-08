@@ -50,7 +50,7 @@ const DashboardManager: FunctionComponent = () => {
 
     const fetchEmployees = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/employees/${storeId}`);
+        const response = await fetch(`https://api.colinpage.org/employees/${storeId}`);
         if (!response.ok) {
           throw new Error("Failed to fetch employees");
         }
@@ -67,7 +67,7 @@ const DashboardManager: FunctionComponent = () => {
   const fetchShifts = async (username: string) => {
     try {
       const queryParams = new URLSearchParams({ username }).toString();
-      const response = await fetch(`http://localhost:8000/schedule/manager/${managerId}`);
+      const response = await fetch(`https://api.colinpage.org/schedule/manager/${managerId}`);
       console.log("Manager ID:", managerId , queryParams);
       if (!response.ok) {
         const errorResponse = await response.text();
@@ -89,7 +89,7 @@ const DashboardManager: FunctionComponent = () => {
     try {
       // Include manager_id directly in the query string
       console.log("Shift ID:", shiftId)
-      const response = await fetch(`http://localhost:8000/shifts/delete/${shiftId}?manager_id=${managerId}`, {
+      const response = await fetch(`https://api.colinpage.org/shifts/delete/${shiftId}?manager_id=${managerId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

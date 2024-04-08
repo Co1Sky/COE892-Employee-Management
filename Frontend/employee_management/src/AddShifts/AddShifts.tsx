@@ -53,7 +53,7 @@ const AddShifts: FunctionComponent = () => {
         console.log('Sending shift data:', shiftData);
     
         try {
-            const response = await fetch(`http://localhost:8000/shifts/add?${queryParams.toString()}`, {
+            const response = await fetch(`https://api.colinpage.org/shifts/add?${queryParams.toString()}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

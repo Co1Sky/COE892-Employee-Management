@@ -43,7 +43,7 @@ const ViewShifts = () => {
   const fetchShifts = async (username: string) => {
     try {
       const queryParams = new URLSearchParams({ username }).toString();
-      const response = await fetch(`http://localhost:8000/schedule/employee/{employee_username}?${queryParams}`);
+      const response = await fetch(`https://api.colinpage.org/schedule/employee/{employee_username}?${queryParams}`);
       console.log("Employee Username:", username);
       if (!response.ok) {
         const errorResponse = await response.text();
@@ -65,7 +65,7 @@ const ViewShifts = () => {
     try {
       // Include manager_id directly in the query string
       console.log("Shift ID:", shiftId)
-      const response = await fetch(`http://localhost:8000/shifts/delete/${shiftId}?manager_id=${managerId}`, {
+      const response = await fetch(`https://api.colinpage.org/shifts/delete/${shiftId}?manager_id=${managerId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

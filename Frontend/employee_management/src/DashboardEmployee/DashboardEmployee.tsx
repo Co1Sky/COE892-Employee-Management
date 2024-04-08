@@ -48,7 +48,7 @@ const DashboardEmployee: FunctionComponent = () => {
   const fetchShifts = async (username: string) => {
     try {
       const queryParams = new URLSearchParams({ username }).toString();
-      const response = await fetch(`http://localhost:8000/schedule/employee/${username}?${queryParams}`);
+      const response = await fetch(`https://api.colinpage.org/schedule/employee/${username}?${queryParams}`);
       console.log("username:", username);
       if (!response.ok) {
         const errorResponse = await response.text();

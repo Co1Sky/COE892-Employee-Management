@@ -13,7 +13,7 @@ const LoginManager: React.FC = () => {
       e.preventDefault();
       try {
           const userData = { username: username.toLowerCase(), password };
-          const response = await fetch("http://localhost:8000/login/manager", {
+          const response = await fetch("https://api.colinpage.org/login/manager", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",
